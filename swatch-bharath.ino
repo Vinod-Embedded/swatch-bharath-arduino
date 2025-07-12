@@ -63,8 +63,8 @@ void loop()
   Serial.println(c);
   Serial.println(d);
   
-  if(a==1)
-  {
+  if(a==1) {
+    // Floor 1
     Serial.println("Collecting Dust");
     Serial.println("Floor 1");
     lcd.setCursor(0, 0);
@@ -77,10 +77,8 @@ void loop()
     post("1");
     //delay(300);
     delay(3000);
-  }
-
-    else if(b==1)
-  {
+  } else if(b==1) {
+    // Floor 2
     Serial.println("Collecting Dust");
     Serial.println("Floor 2");
     lcd.setCursor(0, 0);
@@ -93,10 +91,8 @@ void loop()
     post("2");
     //delay(300);
     delay(3000);
-  }
-
-   else if(c==1)
-  {
+  } else if(c==1) {
+    // Floor 3
     Serial.println("Collecting Dust");
     Serial.println("Floor 3");
     lcd.setCursor(0, 0);
@@ -109,10 +105,8 @@ void loop()
     post("3");
     //delay(300);
     delay(3000);
-  }
-
-  else if(d==1)
-  {
+  } else if(d==1) {
+    //Ground Floor
     lcd.setCursor(0, 1);
     lcd.print("GND Floor");
     digitalWrite(MP,0);
@@ -121,18 +115,13 @@ void loop()
     digitalWrite(MN,0);
     post("0");
   }
-/*  else
-  {
-    lcd.setCursor(0, 1);
-    lcd.print("...             ");
-    post("0");
-  }*/
   delay(1000);
   Serial.println("");
 }
 
 void post(String value1)
 {
+  // Paste the website of yours
   String server = "www.orangewebtools.com";   
   String cmd = "AT+CIPSTART=\"TCP\",\"";
   cmd += server; 
